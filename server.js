@@ -16,11 +16,13 @@ connectDB();
 
 const allowedOrigins = ["https://zenforce.vercel.app"]; // Removed trailing slash
 app.use(cors({
-    origin: allowedOrigins,
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"]
-  }));
+  origin: allowedOrigins,
+  credentials: true, // Enable cookies/auth headers
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  preflightContinue: false, // Ensure preflight requests are properly handled
+  optionsSuccessStatus: 204
+}));
   
 
 app.use(express.json());
