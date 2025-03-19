@@ -22,7 +22,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 // import authRouter from "./Routes/authroutes.js";
-import cookieParser from "cookie-parser";
+// import cookieParser from "cookie-parser";
 // import userRouter from "./Routes/userRoutes.js"; // Fixed typo
 
 dotenv.config(); // Load environment variables
@@ -40,7 +40,7 @@ const allowedOrigins = ["https://zenforce.vercel.app"]; // Removed trailing slas
 
 // Middleware
 app.use(express.json());
-app.use(cookieParser());
+// app.use(cookieParser());
 app.use(cors({ origin: "https://zenforce.vercel.app", credentials: true }));
 
 // Test route
