@@ -20,7 +20,7 @@
 import express from "express";
 // import connectDB from "../backend/config/mongodb.js";
 import dotenv from "dotenv";
-import cors from "cors";
+// import cors from "cors";
 // import authRouter from "./Routes/authroutes.js";
 // import cookieParser from "cookie-parser";
 // import userRouter from "./Routes/userRoutes.js"; // Fixed typo
@@ -43,12 +43,12 @@ app.use(express.json());
 // app.use(cookieParser());
 // app.use(cors({ origin: "https://zenforce.vercel.app", credentials: true }));
 
-app.use(cors({
-    origin: allowedOrigins,
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"]
-  }));
+// app.use(cors({
+//     origin: allowedOrigins,
+//     credentials: true,
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     allowedHeaders: ["Content-Type", "Authorization"]
+//   }));
   
 
 // Test route
