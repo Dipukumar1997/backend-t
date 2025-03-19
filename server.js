@@ -41,12 +41,22 @@ const allowedOrigins = ["https://zenforce.vercel.app"]; // Removed trailing slas
 // Middleware
 app.use(express.json());
 // app.use(cookieParser());
-app.use(cors({ origin: "https://zenforce.vercel.app", credentials: true }));
+// app.use(cors({ origin: "https://zenforce.vercel.app", credentials: true }));
+
+app.use(cors({
+    origin: allowedOrigins,
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+  }));
+  
 
 // Test route
 app.get("/", (req, res) => {
-  res.send("API working");
-});
+    console.log("Root route accessed");
+    res.send("API working");
+  });
+  
 // const fixFieldName = async () => {
 //   try {
 //     await mongoose.connect(process.env.MONGO_URI, {
