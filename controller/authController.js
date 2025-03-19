@@ -126,6 +126,14 @@ export const login = async (req, res) => {
             message: "Login Successful",
             token   // ✅ Send the token in the response
         });
+        const mailOptions = {
+            from: process.env.SENDER_EMAIL,
+            to: user.email,
+            subject: "Login",
+            text: `Login `,
+            // html:EMAIL_VERIFY_TEMPLATE.replace("{{otp}}",otp)
+        }
+        await transporter.sendMail(mailOptions);
 
     } catch (error) {
         console.error("Login error:", error);

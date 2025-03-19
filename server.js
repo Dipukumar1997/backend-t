@@ -34,5 +34,5 @@ app.get("/", (req, res) => {
 
 
 app.use("/api/auth", authRouter);
-app.use("/api/user", uerRouter);
+// app.use("/api/user", uerRouter);
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
